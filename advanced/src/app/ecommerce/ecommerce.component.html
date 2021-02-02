@@ -1,0 +1,46 @@
+<!-- <div class="container">
+  <h1>Linusu Tech Shop</h1>
+  <p>Welcome to the best tech shop in town! You can buy any PC part you want as long as you have money. But remember kids,</p>
+  <p>don't drop your PC component!</p>  
+  <div class="row">
+     <div class="col-md-4">
+         <button mat-button color="primary">Add New Order</button>
+     </div>
+     <hr>
+     <div class="col-md-8" *ngFor="let i of products">
+         <mat-card>
+             <mat-card-header>
+                 <mat-card-title>{{i.totalPrice}}</mat-card-title>
+             </mat-card-header>
+         </mat-card>
+     </div>
+  </div>
+</div>
+<h1>z</h1> -->
+
+<div class="header mt-5">
+    <h1>Linusu Tech Shop</h1>
+    <p>Welcome to the best tech shop in town! You can buy any PC part you want as long as you have money. But remember kids,</p>
+    <p>don't drop your PC component!</p> 
+    <hr>
+</div>
+    <div class="container">
+        <button class="btn btn-primary mb-4">Add New Product</button> 
+        <div class="card mb-4" *ngFor="let list of products">
+            <div class="card-header">
+            <h3 id="text-margin">${{list.totalPrice}}</h3>
+            <p id="text-margin">By {{list.customerName}} . {{list.email}}</p>
+            </div>
+            <div class="card-body" *ngFor="let pro of list.items">
+            <div class="d-flex flex-wrap">
+                <!-- <i class="fa fa-music mr-3" style="size: 15px;"></i> -->
+                <p>{{pro.category}}</p>
+            </div>
+            <p>{{pro.name}} . {{pro.price}}</p>
+        </div> 
+        <div class="card-footer d-flex flex-wrap">
+            <p class="mr-5" style="cursor: pointer; color: red;">DELETE</p>
+            <P>EDIT</P>
+        </div>
+        </div>
+
